@@ -1,3 +1,4 @@
+package restaurantapp;
 import java.util.Date;
 
 public class MenuItem {
