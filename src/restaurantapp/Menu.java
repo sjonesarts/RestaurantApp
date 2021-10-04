@@ -8,6 +8,10 @@ public class Menu {
     private String menuType;
     private ArrayList<MenuItem> menuItems;
 
+    public Menu() {
+        this.menuType = "all";
+    }
+
     public Menu(String menuType) {
         this.menuType = menuType;
     }
@@ -20,6 +24,8 @@ public class Menu {
     public Date getLastUpdated() {
         return lastUpdated;
     }
+    //it might make sense to update the menu's lastUpdated to today's date
+    //when anything else is updated
 
     public String getMenuType() {
         return menuType;
@@ -39,7 +45,7 @@ public class Menu {
 //
 //    }
 
-    public MenuItem getMenuItemByName(int index) {
+    public MenuItem getMenuItemByIndex(int index) {
        return menuItems.get(index);
 
    }

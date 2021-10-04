@@ -1,5 +1,6 @@
 package restaurantapp;
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
     private float price;
@@ -8,7 +9,21 @@ public class MenuItem {
     private String category;
     private Date dateAdded;
 
-    public MenuItem(String name,float price,String description,String category)
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return name.equals(menuItem.name) && description.equals(menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description);
+    }
+
+    public MenuItem(String name, float price, String description, String category)
     {
         this.name = name;
         this.price = price;
@@ -73,6 +88,10 @@ public class MenuItem {
 
     protected void setCategory(String category) {
         this.category = category;
+    }
+
+    public Date getDateAdded() {
+        return dateAdded;
     }
 
     protected void setDateAdded(Date dateAdded) {
