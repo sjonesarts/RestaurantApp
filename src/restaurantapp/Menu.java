@@ -22,12 +22,14 @@ public class Menu {
     }
 
     public Date getLastUpdated() {
+
         return lastUpdated;
     }
     //it might make sense to update the menu's lastUpdated to today's date
     //when anything else is updated
 
     public String getMenuType() {
+
         return menuType;
     }
 
@@ -37,6 +39,7 @@ public class Menu {
     }
 
     public ArrayList<MenuItem> getMenuItems() {
+
         return menuItems;
     }
 
@@ -61,5 +64,14 @@ public class Menu {
         //removes a menu item bearing this name
         return true;
         //return false;
+    }
+
+    @Override
+    public String toString() {
+        String output = menuType + "/n";
+        for (MenuItem item: menuItems) {
+            output += menuItems;
+        }
+        return output;
     }
 }

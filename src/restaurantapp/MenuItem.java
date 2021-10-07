@@ -1,4 +1,5 @@
 package restaurantapp;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
@@ -51,7 +52,9 @@ public class MenuItem {
     }
 
     public boolean isNew()
-    {
+    {   Calendar twoWeeksAgo = Calendar.getInstance();
+        twoWeeksAgo.add(Calendar.DATE, -14);
+
         //compare today's date to dateAdded.
         //if dateAdded is less than two weeks ago, return true
         //else false
